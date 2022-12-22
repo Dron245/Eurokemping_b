@@ -6105,7 +6105,9 @@
         if (!targetElement.closest(".map__tip") && !targetElement.closest(".house__items")) {
             map.classList.remove("_active");
             closeOne.forEach((element => {
-                element.classList.remove("_close-open");
+                setTimeout((() => {
+                    element.classList.remove("_close-open");
+                }), 500);
             }));
         }
         if (targetElement.closest(".map__tip_1")) {
