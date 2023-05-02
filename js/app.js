@@ -5889,13 +5889,17 @@
     function initSliders() {
         bildSliders();
         if (document.querySelector(".header__slider")) new core(".header__slider", {
-            modules: [ Navigation ],
+            modules: [ Navigation, Pagination ],
             observer: true,
             observeParents: true,
             slidesPerView: 1,
             spaceBetween: 0,
             autoHeight: true,
             speed: 800,
+            pagination: {
+                el: ".header__pagination-swiper",
+                clickable: true
+            },
             navigation: {
                 prevEl: ".review__arrow_left",
                 nextEl: ".review__arrow_right"
@@ -6179,7 +6183,6 @@
     }
     const popular = document.querySelector(".popular");
     const populartext = popular.querySelectorAll(".house-popular__text");
-    console.log(populartext);
     for (let i = 0; i < populartext.length; i++) {
         const el = populartext[i];
         const link = el.nextElementSibling;
